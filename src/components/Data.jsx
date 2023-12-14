@@ -1,27 +1,26 @@
 
 import { useEffect, useState } from "react"
 import '../style/data.css'
+import { getData } from "../services/getData"
 
 export function Data ({ city }){
-    
   //logic
   const [weatherData, setWeatherData] = useState(null)
   const apiID = 'f9ef9957654c693945955afd6cd087e2'
+  const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiID}`
+
+  const dataInWearherData = async () => {
+    const data = await getData(apiURL)
+    setWeatherData(data)
+  }
+
   useEffect(() => {
-      const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiID}`
-      fetch(apiURL)
-          .then(response => response.json())
-          .then(data => {
-              console.log(data)
-              setWeatherData(data)
-          })
-            .catch(err => console.error(err))
+    dataInWearherData()
   },[city])
 
     
     return (
         <>
-        
         <div className="box-01">
       {weatherData && weatherData.main ? ( 
         <main>
