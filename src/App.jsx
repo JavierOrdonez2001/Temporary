@@ -13,7 +13,7 @@ export function App () {
         setCity(cityentered)
 
     }
-    console.log('holaaa')
+    
     return(
         <>
         <Nav onSearChcity={handleSearshCity}></Nav>
