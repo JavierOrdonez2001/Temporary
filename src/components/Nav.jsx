@@ -11,6 +11,8 @@ export function Nav ({onSearChcity}){
 
     const searchWhenClick = () => {
         onSearChcity(city)
+
+     
     }
 
     return(
