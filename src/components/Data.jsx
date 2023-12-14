@@ -44,7 +44,7 @@ export function Data ({ city }){
           <h2>Mas detalles de {weatherData.name}.</h2>
           <div>
             <p>Humedad: {weatherData.main.humidity} %</p>
-            <p>Viento  km/h</p>
+            <p>Viento: {weatherData.wind.speed} km/h</p>
           </div>   
         </main>
       ):(
