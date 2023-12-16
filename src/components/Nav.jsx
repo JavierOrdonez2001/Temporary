@@ -2,6 +2,8 @@
 import '../style/nav.css'
 import logoimg from '../../public/logo.png'
 import { useState } from 'react'
+import {Link, Route, Routes} from 'react-router-dom'
+
 
 export function Nav ({onSearChcity}){
     const [city, setCity] = useState('')
@@ -23,9 +25,10 @@ export function Nav ({onSearChcity}){
             </div>
             <nav>
                 <ul className="nav-links">
-                    <li><a href="#">services</a></li>
-                    <li><a href="#">about</a></li>
-                    <li><a href="#">contact</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/services">Services</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                 </ul>
             </nav>
             <div className="box-input">
@@ -36,9 +39,13 @@ export function Nav ({onSearChcity}){
                 onChange={handleChange} />
                 <button className="btn-buscar" onClick={searchWhenClick}>Buscar</button>
             </div>
-            
         </header>
-        
+            <Routes>
+                <Route></Route>
+                <Route></Route>
+                <Route></Route>
+                <Route></Route>
+            </Routes>
         </>
     )
 }
